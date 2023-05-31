@@ -4,16 +4,16 @@ export function activate(context: vscode.ExtensionContext) {
     let disposable1 = vscode.commands.registerCommand(
         "extension.createScript",
         async () => {
-            const value1 = await vscode.window.showInputBox({
+            const filename = await vscode.window.showInputBox({
                 prompt: "Enter script name (YYMMDDxxNN)",
                 value: getCurrentDate(),
             });
-            if (value1) {
-                const value2 = await vscode.window.showInputBox({
+            if (filename) {
+                const ticket = await vscode.window.showInputBox({
                     prompt: "Enter ticket",
                 });
-                if (value2) {
-                    const value3 = await vscode.window.showInputBox({
+                if (ticket) {
+                    const description = await vscode.window.showInputBox({
                         prompt: "Enter description",
                     });
 
@@ -25,7 +25,7 @@ export function activate(context: vscode.ExtensionContext) {
 set term ;!
                 
 insert into applied_scripts (name, description, script_date)
-    values ('${value1}', '${value2} ${value3}', '${getAppliedScriptsDate()}');`;
+    values ('${filename.toLowerCase()}', '${ticket.toUpperCase()} ${description}', '${getAppliedScriptsDate()}');`;
 
                     // Create a new text document with the generated text
                     const doc = await vscode.workspace.openTextDocument({
@@ -75,14 +75,15 @@ function createStoredProcedure() {
                 vscode.window
                     .showInputBox({
                         prompt: promptInputs[currentPrompt].prompt,
+                        value: promptInputs[currentPrompt].value,
                     })
                     .then(handleInput);
             } else {
                 // All inputs collected, create the templates
-                const fileName = promptInputs[0].value;
-                const ticketNumber = promptInputs[1].value;
+                const fileName = promptInputs[0].value.toLowerCase();
+                const ticketNumber = promptInputs[1].value.toUpperCase();
                 const description = promptInputs[2].value;
-                const procName = promptInputs[3].value;
+                const procName = promptInputs[3].value.toLowerCase();
 
                 // Template for the first file
                 const firstFileTemplate = `set term !;
@@ -165,7 +166,7 @@ set term ;!
     };
 
     vscode.window
-        .showInputBox({ prompt: promptInputs[currentPrompt].prompt })
+        .showInputBox({ prompt: promptInputs[currentPrompt].prompt, value: promptInputs[currentPrompt].value })
         .then(handleInput);
 }
 
