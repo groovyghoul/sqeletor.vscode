@@ -2,7 +2,7 @@
   "name": "sqeletor-vscode",
   "displayName": "sqeletor-vscode",
   "description": "An opinionated Sql template",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": {
     "name": "Richard O'Neil (groovyghoul)"
   },
