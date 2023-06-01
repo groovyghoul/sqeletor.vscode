@@ -3,10 +3,24 @@
   "displayName": "sqeletor-vscode",
   "description": "An opinionated Sql template",
   "version": "0.0.1",
+  "author": {
+    "name": "Richard O'Neil (groovyghoul)"
+  },
+  "publisher": "bytemares",
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#C80000",
+    "theme": "dark"
+  },
   "engines": {
     "vscode": "^1.78.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/groovyghoul/sqeletor.vscode"
+  },
   "categories": [
+    "Snippets",
     "Other"
   ],
   "activationEvents": [],
