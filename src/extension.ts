@@ -165,12 +165,36 @@ insert into applied_scripts (name, description, script_date)
                             new vscode.Position(0, 0),
                             firstFileTemplate
                         );
+
                         vscode.workspace.applyEdit(edit).then(() => {
-                            vscode.window.showTextDocument(doc, {
-                                preview: false,
-                                viewColumn: vscode.ViewColumn.Active,
-                                preserveFocus: true,
-                            });
+                            vscode.window
+                                .showTextDocument(doc, {
+                                    preview: false,
+                                    viewColumn: vscode.ViewColumn.Active,
+                                    preserveFocus: true,
+                                })
+                                .then((editor) => {
+                                    const newPosition = new vscode.Position(
+                                        2,
+                                        0
+                                    );
+                                    const newSelection = new vscode.Selection(
+                                        newPosition,
+                                        newPosition
+                                    );
+                                    editor.selection = newSelection;
+
+                                    editor.revealRange(
+                                        new vscode.Range(
+                                            newPosition,
+                                            newPosition
+                                        ),
+                                        vscode.TextEditorRevealType.InCenter
+                                    );
+                                    vscode.commands.executeCommand(
+                                        "workbench.action.focusActiveEditorGroup"
+                                    );
+                                });
                         });
                     });
 
@@ -206,12 +230,36 @@ set term ;!
                             new vscode.Position(0, 0),
                             secondFileTemplate
                         );
+
                         vscode.workspace.applyEdit(edit).then(() => {
-                            vscode.window.showTextDocument(doc, {
-                                preview: false,
-                                viewColumn: vscode.ViewColumn.Active,
-                                preserveFocus: true,
-                            });
+                            vscode.window
+                                .showTextDocument(doc, {
+                                    preview: false,
+                                    viewColumn: vscode.ViewColumn.Active,
+                                    preserveFocus: true,
+                                })
+                                .then((editor) => {
+                                    const newPosition = new vscode.Position(
+                                        6,
+                                        0
+                                    );
+                                    const newSelection = new vscode.Selection(
+                                        newPosition,
+                                        newPosition
+                                    );
+                                    editor.selection = newSelection;
+
+                                    editor.revealRange(
+                                        new vscode.Range(
+                                            newPosition,
+                                            newPosition
+                                        ),
+                                        vscode.TextEditorRevealType.InCenter
+                                    );
+                                    vscode.commands.executeCommand(
+                                        "workbench.action.focusActiveEditorGroup"
+                                    );
+                                });
                         });
                     });
             }

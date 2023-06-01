@@ -14,7 +14,11 @@ SQeLetor script
 
 ## Release Notes
 
-### 0.1.0
+### 0.0.2
+
+fix: focus inside of the window when new tabs are created
+
+### 0.0.1
 
 Initial release of sqeletor-vscode (alpha)
 
@@ -22,5 +26,4 @@ Initial release of sqeletor-vscode (alpha)
 
 ### Known Issues
 
-* the tab is not pre-named correctly when using "SQeLetor script"
 * the cursor is not pre-positioned in the desired location for "SQeLetor procedure". It works correctly for "SQeLetor script", though
