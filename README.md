@@ -6,15 +6,11 @@ An opinionated SQL template
 
 SQeLetor procedure
 
-<video controls>
-    <source src="images/procedure_example.mp4" type="video/mp4">
-</video>
+![SQeLetor procedure](images/procedure_example.gif)
 
 SQeLetor script
 
-<video controls>
-    <source src="images/script_example.mp4" type="video/mp4">
-</video>
+![SQeLetor script](images/script_example.gif)
 
 ## Release Notes
 
