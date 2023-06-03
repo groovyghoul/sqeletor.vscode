@@ -53,11 +53,15 @@ from some_table;
 
 ### Download source code
 
-`git clone https://github.com/groovyghoul/sqeletor.vscode.git`
+```shell
+git clone https://github.com/groovyghoul/sqeletor.vscode.git
+```
 
 ### To compile
 
-`npm run compile`
+```shell
+npm run compile
+```
 
 ## Release Notes
 
