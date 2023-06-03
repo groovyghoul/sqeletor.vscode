@@ -14,6 +14,10 @@ SQeLetor script
 
 ## Release Notes
 
+### 0.0.3
+
+feat: add snippets and user-defined snippets
+
 ### 0.0.2
 
 fix: focus inside of the window when new tabs are created
@@ -23,6 +27,12 @@ fix: focus inside of the window when new tabs are created
 Initial release of sqeletor-vscode (alpha)
 
 ---
+
+### TODO
+
+* decide what snippets should be shipped with extension and clean up
+* document settings
+* update README.md with videos of snippets and how to configure user-defined
 
 ### Known Issues
 

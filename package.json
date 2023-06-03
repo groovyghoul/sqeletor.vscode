@@ -2,7 +2,7 @@
   "name": "sqeletor-vscode",
   "displayName": "sqeletor-vscode",
   "description": "An opinionated Sql template",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": {
     "name": "Richard O'Neil (groovyghoul)"
   },
@@ -34,8 +34,27 @@
       {
         "command": "extension.createStoredProcedure",
         "title": "SQeLetor stored procedure"
+      },
+      {
+        "command": "extension.snippets",
+        "title": "SQeLetor snippets"
+      },
+      {
+        "command": "extension.userSnippets",
+        "title": "SQeLetor user-defined snippets"
       }
-    ]
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "SQeLetor",
+      "properties": {
+        "sqeletor.snippetFolderPath": {
+          "type": "string",
+          "default": "'",
+          "description": "Path to user-defined snippets"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
