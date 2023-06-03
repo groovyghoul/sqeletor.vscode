@@ -81,6 +81,9 @@ function readActionsFromFiles(directoryPath: string): Action[] {
             actions.push({ key, label });
         }
     });
+    
+    // Sort the actions array based on label
+    actions.sort((a, b) => a.label.localeCompare(b.label));
 
     return actions;
 }
