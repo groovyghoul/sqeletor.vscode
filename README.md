@@ -32,6 +32,23 @@ To configure where user-defined snippets are stored
 
 ![settings](images/settings.png)
 
+For each user-defined snippet, create a file in the configured folder using the convention:
+
+key.txt 
+
+For example:
+
+1. Create a file and name it `my_action.txt`
+2. Edit file with the following
+
+```
+key=my_action
+label=This is the label that will show in menu
+---
+select *
+from some_table;
+```
+
 ## Development
 
 ### Download source code
